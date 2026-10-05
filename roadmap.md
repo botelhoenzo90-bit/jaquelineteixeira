@@ -1,5 +1,5 @@
-- [ ] Adicionar as quatro fotos restantes aos procedimentos correspondentes
-- [ ] Aplicar a imagem da clínica e a foto da Jaqueline
-- [ ] Trocar o ícone do botão flutuante pelo WhatsApp enviado
-- [ ] Centralizar o conteúdo e reduzir espaços vazios
-- [ ] Verificar em computador e celular
+- [x] Adicionar as quatro fotos restantes aos procedimentos correspondentes
+- [x] Aplicar a imagem da clínica e a foto da Jaqueline
+- [x] Trocar o ícone do botão flutuante pelo WhatsApp enviado
+- [x] Centralizar o conteúdo e reduzir espaços vazios
+- [x] Verificar em computador e celular
