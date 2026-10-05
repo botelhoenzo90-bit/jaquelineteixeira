@@ -1,9 +1,12 @@
-# Página em branco
+# Logomarca e fotos dos procedimentos
 
-## Alteração
-- Remover todo o conteúdo visível da página inicial.
-- Manter apenas uma tela branca que ocupa toda a janela.
-- Definir metadados internos mínimos, sem exibi-los na página.
+## Alterações
+- Aplicar a logomarca enviada nos pontos de identificação da marca.
+- Transformar os cartões de procedimentos em um carrossel visual, usando cada foto no serviço correspondente.
+- Relacionar as imagens atuais a drenagem/modeladora, radiofrequência facial e corporal, massagem relaxante, spa dos pés e banho de lua.
+- Manter os procedimentos ainda sem foto preparados para receber as próximas imagens.
+- Preservar o botão flutuante atual até o envio da logo específica do WhatsApp.
 
 ## Verificação
-- Confirmar que a página abre vazia em uma tela branca e sem erros.
+- Conferir o carrossel em telas grandes e pequenas.
+- Confirmar que logomarca, fotos e textos aparecem sem cortes inadequados ou sobreposições.
