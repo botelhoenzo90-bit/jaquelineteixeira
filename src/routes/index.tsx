@@ -57,15 +57,8 @@ function Index() {
 
   return (
     <main className="jt-site">
-      <header className="site-header"><div className="container header-inner">
-        <a className="brand" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><span className="brand-mark">JT</span><span><strong>JAQUELINE TEIXEIRA</strong><small>ESTÉTICA & MASSOTERAPIA</small></span></a>
-        <nav className={menuOpen ? "nav open" : "nav"}><a href="#procedimentos" onClick={() => setMenuOpen(false)}>Procedimentos</a><a href="#jaqueline" onClick={() => setMenuOpen(false)}>Jaqueline</a><a href="#como-funciona" onClick={() => setMenuOpen(false)}>Como funciona</a><a href="#faq" onClick={() => setMenuOpen(false)}>Dúvidas</a><a href="#localizacao" onClick={() => setMenuOpen(false)}>Localização</a></nav>
-        <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menu">{menuOpen ? <X /> : <span>☰</span>}</button>
-        <button className="header-cta" onClick={() => goWhatsapp("agendar meu atendimento")}><MessageCircle size={17} /> Agendar</button>
-      </div></header>
-
       <section className="hero" id="inicio"><div className="hero-glow" /><div className="container hero-grid">
-        <div className="hero-copy center-hero"><span className="eyebrow">ESTÉTICA • MASSOTERAPIA • BEM-ESTAR</span><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
+        <div className="hero-copy center-hero"><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
         <div className="hero-actions"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação personalizada")}><MessageCircle size={19} /> Quero agendar</button><a className="btn btn-outline" href="#procedimentos">Conhecer procedimentos <ArrowRight size={18} /></a></div>
         <div className="hero-trust"><span><Check size={15} /> Atendimento personalizado</span><span><Check size={15} /> Formosa • GO</span></div></div>
       </div></section>
