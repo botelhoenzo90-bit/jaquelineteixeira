@@ -33,3 +33,30 @@
 .technology-section{background:#fffdf9!important}
 .faq-final-cta{display:inline-flex;margin:28px auto 0}
 .faq-section .faq-final-cta{display:flex}
+
+
+/* Carrosseis de ponta a ponta */
+.procedure-window,.reviews-window{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);overflow:hidden;padding:8px 0 18px}
+.procedure-track,.reviews-track{display:flex;width:max-content;gap:16px;will-change:transform}
+.procedure-card{width:280px;flex:none}
+.reviews-section{background:#fbf3e5;padding:82px 0 78px}
+.reviews-heading{width:min(760px,calc(100% - 42px));margin:0 auto 32px;text-align:center}
+.reviews-heading p{max-width:650px;margin:0 auto;color:var(--muted);line-height:1.75;font-size:14px}
+.reviews-track{animation:reviewsLoop 48s linear infinite}
+.reviews-window:hover .reviews-track{animation-play-state:running}
+@keyframes reviewsLoop{to{transform:translateX(calc(-50% - 8px))}}
+.review-card{width:340px;min-height:245px;flex:none;background:#fffdf9;border:1px solid #eadfca;border-radius:22px;padding:24px;box-shadow:0 12px 28px rgba(60,50,35,.07);display:flex;flex-direction:column}
+.review-stars{display:flex;gap:3px;color:var(--gold);margin-bottom:17px}
+.review-card>p{font-family:Georgia,serif;font-size:17px;line-height:1.55;color:#403a34;margin:0 0 22px}
+.review-footer{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #eee4d2}
+.review-avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#fff3c7,#d9b747);color:#806000;font-family:Georgia,serif;font-size:16px}
+.review-footer div:last-child{display:flex;flex-direction:column;gap:3px}
+.review-footer strong{font-size:11px;color:#38332e}
+.review-footer span{font-size:9px;color:var(--muted)}
+@media(max-width:780px){
+  .procedure-window,.reviews-window{padding-left:0;padding-right:0}
+  .procedure-track,.reviews-track{gap:12px}
+  .procedure-card{width:275px}
+  .review-card{width:300px;min-height:235px;padding:21px}
+  .review-card>p{font-size:15px}
+}
