@@ -6,6 +6,7 @@ import {
   Waves, Wind, X, Zap,
 } from "lucide-react";
 import logoAsset from "@/assets/jaqueline-teixeira-logo.png.asset.json";
+import novaLogoAsset from "@/assets/jaqueline-teixeira-logo-nova.png.asset.json";
 import drenagemAsset from "@/assets/drenagem-linfatica.png.asset.json";
 import drenagemModelacaoAsset from "@/assets/drenagem-modelacao.png.asset.json";
 import massagemAsset from "@/assets/massagem-relaxante.png.asset.json";
@@ -31,8 +32,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Corpo leve, cuidado personalizado e uma experiência pensada para você." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://jaquelineteixeira.lovable.app/" },
+      { property: "og:image", content: "https://jaquelineteixeira.lovable.app/__l5e/assets-v1/14c5b3eb-8e57-4b52-96a1-12fb5c400f7e/compartilhamento-jaqueline-teixeira.png" },
+      { name: "twitter:image", content: "https://jaquelineteixeira.lovable.app/__l5e/assets-v1/14c5b3eb-8e57-4b52-96a1-12fb5c400f7e/compartilhamento-jaqueline-teixeira.png" },
       { name: "theme-color", content: "#c9a227" },
     ],
+    links: [{ rel: "canonical", href: "https://jaquelineteixeira.lovable.app/" }],
   }),
   component: Index,
 });
@@ -84,7 +89,7 @@ function Index() {
   return (
     <main className="jt-site">
       <section className="hero" id="inicio"><div className="hero-glow" /><div className="container hero-grid">
-        <div className="hero-copy center-hero"><a className="hero-logo" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><img src={logoAsset.url} alt="Jaqueline Teixeira Estética e Massoterapia" /></a><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
+        <div className="hero-copy center-hero"><a className="hero-logo" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><img src={novaLogoAsset.url} alt="Jaqueline Teixeira" /><span>Estética e Massoterapia</span></a><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
         <div className="hero-actions"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação personalizada")}><MessageCircle size={19} /> Quero agendar</button><a className="btn btn-outline" href="#procedimentos">Conhecer procedimentos <ArrowRight size={18} /></a></div>
         <div className="hero-trust"><span><Check size={15} /> Atendimento personalizado</span><span><Check size={15} /> Formosa • GO</span></div></div>
       </div></section>
