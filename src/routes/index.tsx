@@ -79,14 +79,12 @@ function SunIcon(props: { size?: number }) { return <Sparkles size={props.size ?
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [menuOpen, setMenuOpen] = useState(false);
   const goWhatsapp = (label: string) => window.open(`${WHATSAPP}?text=${encodeURIComponent(`Olá! Vim pelo site da Jaqueline Teixeira e gostaria de ${label.toLowerCase()}.`)}`, "_blank", "noopener,noreferrer");
 
   return (
     <main className="jt-site">
-      <header className="site-header"><div className="container header-inner"><a className="brand brand-logo" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><img src={logoAsset.url} alt="Jaqueline Teixeira Estética e Massoterapia" /></a><nav className={menuOpen ? "nav open" : "nav"} aria-label="Navegação principal"><a href="#procedimentos" onClick={() => setMenuOpen(false)}>Procedimentos</a><a href="#jaqueline" onClick={() => setMenuOpen(false)}>Sobre</a><a href="#avaliacoes" onClick={() => setMenuOpen(false)}>Avaliações</a><a href="#localizacao" onClick={() => setMenuOpen(false)}>Localização</a></nav><button className="menu-btn" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : "☰"}</button><button className="header-cta" onClick={() => goWhatsapp("agendar um atendimento")}><MessageCircle size={16}/> Agendar</button></div></header>
       <section className="hero" id="inicio"><div className="hero-glow" /><div className="container hero-grid">
-        <div className="hero-copy center-hero"><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
+        <div className="hero-copy center-hero"><a className="hero-logo" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><img src={logoAsset.url} alt="Jaqueline Teixeira Estética e Massoterapia" /></a><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
         <div className="hero-actions"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação personalizada")}><MessageCircle size={19} /> Quero agendar</button><a className="btn btn-outline" href="#procedimentos">Conhecer procedimentos <ArrowRight size={18} /></a></div>
         <div className="hero-trust"><span><Check size={15} /> Atendimento personalizado</span><span><Check size={15} /> Formosa • GO</span></div></div>
       </div></section>
