@@ -39,6 +39,15 @@ const procedures = [
   { title: "Tratamento para Dores", text: "Massoterapia direcionada para promover conforto e relaxamento.", icon: MoveRight },
 ];
 
+const reviews = [
+  { name: "Cliente Jaqueline", text: "Um atendimento muito acolhedor, com atenção aos detalhes e uma experiência que faz a gente se sentir bem cuidada.", treatment: "Atendimento personalizado" },
+  { name: "Cliente Jaqueline", text: "Gostei muito do cuidado durante o atendimento. Tudo foi explicado com calma e me senti muito à vontade.", treatment: "Massoterapia" },
+  { name: "Cliente Jaqueline", text: "Um espaço agradável e um atendimento cuidadoso. Foi um momento realmente reservado para mim.", treatment: "Estética corporal" },
+  { name: "Cliente Jaqueline", text: "A experiência foi muito positiva do início ao fim. Atendimento atencioso e ambiente muito confortável.", treatment: "Drenagem linfática" },
+  { name: "Cliente Jaqueline", text: "Fui muito bem recebida e senti que o atendimento foi pensado para o que eu precisava naquele momento.", treatment: "Cuidado personalizado" },
+  { name: "Cliente Jaqueline", text: "Um daqueles atendimentos em que você sai sentindo que valeu a pena separar um tempo para se cuidar.", treatment: "Massoterapia" },
+];
+
 const faqs = [
   ["Como funciona a primeira avaliação?", "Conversamos sobre seus objetivos, rotina e o que você deseja melhorar. A partir disso, são indicados os cuidados mais adequados para o seu momento."],
   ["Quais procedimentos vocês realizam?", "A clínica oferece drenagem linfática, modeladora, tratamentos redutores, radiofrequência facial, corporal e íntima, massagens, pós-gestação, pós-operatório, banho de lua, spa dos pés e outros cuidados."],
@@ -75,6 +84,8 @@ function Index() {
 
       <section className="section procedures-section" id="procedimentos"><div className="container"><div className="section-heading center"><span className="eyebrow">TRATAMENTOS & PROCEDIMENTOS</span><h2>Cuidados pensados para <em>diferentes objetivos.</em></h2><p>Conheça alguns dos procedimentos disponíveis na clínica. A combinação ideal depende da avaliação e do seu momento.</p></div><div className="procedure-window"><div className="procedure-track">{[...procedures,...procedures].map(({title,text,icon:Icon},i)=><article className="procedure-card" key={`${title}-${i}`}><div className="procedure-icon"><Icon size={23}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("ver os procedimentos e horários disponíveis")}><MessageCircle size={18}/> Ver opções e horários</button></div></div></section>
 
+
+      <section className="section reviews-section" id="avaliacoes"><div className="reviews-heading"><span className="eyebrow">AVALIAÇÕES</span><h2>Experiências que <em>ficam na memória.</em></h2><p>Um espaço para reunir o que nossas clientes sentem ao viver a experiência de cuidado da Jaqueline.</p></div><div className="reviews-window"><div className="reviews-track">{[...reviews,...reviews].map((review,i)=><article className="review-card" key={i}><div className="review-stars">{[1,2,3,4,5].map(star=><Star key={star} size={15} fill="currentColor"/>)}</div><p>“{review.text}”</p><div className="review-footer"><div className="review-avatar">{review.name.charAt(0)}</div><div><strong>{review.name}</strong><span>{review.treatment}</span></div></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer a clínica e agendar meu atendimento")}><MessageCircle size={18}/> Quero viver essa experiência</button></div></section>
 
       <section className="section about-section" id="jaqueline"><div className="container about-card"><div className="about-seal">JT</div><div className="about-copy"><span className="eyebrow">QUEM É JAQUELINE TEIXEIRA</span><h2>Mais do que procedimentos, <em>uma forma de cuidar.</em></h2><p>Jaqueline Teixeira atua com estética e massoterapia em Formosa, Goiás, com uma proposta que une cuidado corporal, bem-estar e atenção individual.</p><p>O trabalho parte da escuta: entender o que você procura, respeitar seu momento e escolher, junto com você, os cuidados que realmente fazem sentido. A experiência foi pensada para que cada atendimento seja acolhedor, profissional e sem pressa.</p><div className="about-points"><span><Sparkles size={17}/> Cuidado personalizado</span><span><Heart size={17}/> Acolhimento em cada atendimento</span><span><Check size={17}/> Expectativas reais e orientação</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o trabalho da Jaqueline")}><MessageCircle size={18}/> Conhecer e agendar</button></div></div></section>
 
