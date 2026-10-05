@@ -5,6 +5,16 @@ import {
   MapPin, MessageCircle, MoveRight, Navigation, Phone, Sparkles, Star,
   Waves, Wind, X, Zap,
 } from "lucide-react";
+import logoAsset from "@/assets/jaqueline-teixeira-logo.png.asset.json";
+import drenagemAsset from "@/assets/drenagem-linfatica.png.asset.json";
+import drenagemModelacaoAsset from "@/assets/drenagem-modelacao.png.asset.json";
+import massagemAsset from "@/assets/massagem-relaxante.png.asset.json";
+import posGestacaoAsset from "@/assets/pos-gestacao.png.asset.json";
+import radioCorporalAsset from "@/assets/radiofrequencia-corporal.png.asset.json";
+import radioFacialAsset from "@/assets/radiofrequencia-facial.png.asset.json";
+import redutorAsset from "@/assets/tratamento-redutor.png.asset.json";
+import spaPesAsset from "@/assets/spa-dos-pes.png.asset.json";
+import banhoLuaAsset from "@/assets/banho-de-lua.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,6 +24,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Jaqueline Teixeira | Estética & Massoterapia" },
       { property: "og:description", content: "Corpo leve, cuidado personalizado e uma experiência pensada para você." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#c9a227" },
     ],
   }),
@@ -25,17 +36,18 @@ const INSTAGRAM = "https://www.instagram.com/jaquelineteixeira_estetica/";
 const MAP = "https://www.google.com/maps/search/?api=1&query=Rua+Juselino+Malheiros,+125,+Centro,+Formosa,+GO";
 
 const procedures = [
-  { title: "Drenagem Linfática", text: "Técnica voltada para uma sensação de leveza e cuidado corporal.", icon: Waves },
-  { title: "Drenagem + Modelação", text: "Um protocolo que combina técnicas para cuidar do contorno corporal.", icon: Sparkles },
-  { title: "Tratamento Redutor de Medidas", text: "Protocolos personalizados de acordo com seus objetivos e avaliação.", icon: Zap },
-  { title: "Radiofrequência", text: "Tecnologia para cuidados faciais, corporais e íntimos.", icon: Wind },
+  { title: "Drenagem Linfática", text: "Técnica voltada para uma sensação de leveza e cuidado corporal.", icon: Waves, image: drenagemAsset.url },
+  { title: "Drenagem + Modelação", text: "Um protocolo que combina técnicas para cuidar do contorno corporal.", icon: Sparkles, image: drenagemModelacaoAsset.url },
+  { title: "Tratamento Redutor de Medidas", text: "Protocolos personalizados de acordo com seus objetivos e avaliação.", icon: Zap, image: redutorAsset.url },
+  { title: "Radiofrequência Corporal", text: "Tecnologia aplicada aos cuidados e ao contorno corporal.", icon: Wind, image: radioCorporalAsset.url },
+  { title: "Radiofrequência Facial", text: "Tecnologia para um cuidado facial personalizado.", icon: Sparkles, image: radioFacialAsset.url },
   { title: "Massagem Detox", text: "Uma experiência de cuidado para desacelerar e se sentir mais leve.", icon: Heart },
-  { title: "Massagem Relaxante", text: "Momento de pausa com técnicas e pedras quentes.", icon: Sparkles },
+  { title: "Massagem Relaxante", text: "Momento de pausa com técnicas e pedras quentes.", icon: Sparkles, image: massagemAsset.url },
   { title: "Massagem Bronzeadora", text: "Cuidado corporal para realçar o visual e a autoestima.", icon: SunIcon },
-  { title: "Pós-Gestação", text: "Atendimento pensado para o momento e as necessidades de cada mulher.", icon: Heart },
+  { title: "Pós-Gestação", text: "Atendimento pensado para o momento e as necessidades de cada mulher.", icon: Heart, image: posGestacaoAsset.url },
   { title: "Pós-Operatório", text: "Cuidados estéticos realizados com atenção e orientação adequada.", icon: Check },
-  { title: "Spa dos Pés", text: "Um ritual de cuidado para relaxar e renovar a sensação de bem-estar.", icon: Waves },
-  { title: "Banho de Lua", text: "Cuidado corporal para uma pele com aparência mais uniforme e iluminada.", icon: Sparkles },
+  { title: "Spa dos Pés", text: "Um ritual de cuidado para relaxar e renovar a sensação de bem-estar.", icon: Waves, image: spaPesAsset.url },
+  { title: "Banho de Lua", text: "Cuidado corporal para uma pele com aparência mais uniforme e iluminada.", icon: Sparkles, image: banhoLuaAsset.url },
   { title: "Tratamento para Dores", text: "Massoterapia direcionada para promover conforto e relaxamento.", icon: MoveRight },
 ];
 
@@ -66,6 +78,7 @@ function Index() {
 
   return (
     <main className="jt-site">
+      <header className="site-header"><div className="container header-inner"><a className="brand brand-logo" href="#inicio" aria-label="Jaqueline Teixeira Estética e Massoterapia"><img src={logoAsset.url} alt="Jaqueline Teixeira Estética e Massoterapia" /></a><nav className={menuOpen ? "nav open" : "nav"} aria-label="Navegação principal"><a href="#procedimentos" onClick={() => setMenuOpen(false)}>Procedimentos</a><a href="#jaqueline" onClick={() => setMenuOpen(false)}>Sobre</a><a href="#avaliacoes" onClick={() => setMenuOpen(false)}>Avaliações</a><a href="#localizacao" onClick={() => setMenuOpen(false)}>Localização</a></nav><button className="menu-btn" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : "☰"}</button><button className="header-cta" onClick={() => goWhatsapp("agendar um atendimento")}><MessageCircle size={16}/> Agendar</button></div></header>
       <section className="hero" id="inicio"><div className="hero-glow" /><div className="container hero-grid">
         <div className="hero-copy center-hero"><h1>Seu cuidado merece ser <em>sentido.</em></h1><p className="hero-lead">Tratamentos estéticos e massagens personalizados para você se sentir mais leve, cuidada e confiante — com atenção em cada detalhe.</p>
         <div className="hero-actions"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação personalizada")}><MessageCircle size={19} /> Quero agendar</button><a className="btn btn-outline" href="#procedimentos">Conhecer procedimentos <ArrowRight size={18} /></a></div>
@@ -82,12 +95,12 @@ function Index() {
       <section className="section pain-section"><div className="container narrow center"><span className="eyebrow">TALVEZ VOCÊ ESTEJA SENTINDO ISSO</span><h2>Quando você olha no espelho e sente que <em>poderia se cuidar mais.</em></h2><p>Inchaço, sensação de peso, tensão muscular, falta de tempo para você ou simplesmente vontade de se sentir melhor com o próprio corpo. Esses sinais merecem atenção — sem pressão e sem promessas milagrosas.</p><div className="check-list centered-list"><div><Check size={17}/><span>Você quer uma rotina de autocuidado que caiba na sua vida.</span></div><div><Check size={17}/><span>Busca procedimentos escolhidos de acordo com seus objetivos.</span></div><div><Check size={17}/><span>Quer sair do atendimento sentindo que aquele tempo valeu a pena.</span></div></div><button className="btn btn-primary" onClick={() => goWhatsapp("entender qual procedimento combina comigo")}><MessageCircle size={18}/> Quero entender meu atendimento</button></div></section>
 
 
-      <section className="section procedures-section" id="procedimentos"><div className="container"><div className="section-heading center"><span className="eyebrow">TRATAMENTOS & PROCEDIMENTOS</span><h2>Cuidados pensados para <em>diferentes objetivos.</em></h2><p>Conheça alguns dos procedimentos disponíveis na clínica. A combinação ideal depende da avaliação e do seu momento.</p></div><div className="procedure-window"><div className="procedure-track">{[...procedures,...procedures].map(({title,text,icon:Icon},i)=><article className="procedure-card" key={`${title}-${i}`}><div className="procedure-icon"><Icon size={23}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("ver os procedimentos e horários disponíveis")}><MessageCircle size={18}/> Ver opções e horários</button></div></div></section>
+      <section className="section procedures-section" id="procedimentos"><div className="container"><div className="section-heading center"><span className="eyebrow">TRATAMENTOS & PROCEDIMENTOS</span><h2>Cuidados pensados para <em>diferentes objetivos.</em></h2><p>Conheça alguns dos procedimentos disponíveis na clínica. A combinação ideal depende da avaliação e do seu momento.</p></div><div className="procedure-window"><div className="procedure-track">{[...procedures,...procedures].map(({title,text,icon:Icon,image},i)=><article className={`procedure-card${image ? " has-image" : ""}`} key={`${title}-${i}`}>{image ? <img className="procedure-photo" src={image} alt={`${title} na Jaqueline Teixeira`} loading="lazy" /> : <div className="procedure-placeholder" aria-hidden="true"><Icon size={32}/></div>}<div className="procedure-content"><div className="procedure-icon"><Icon size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("ver os procedimentos e horários disponíveis")}><MessageCircle size={18}/> Ver opções e horários</button></div></div></section>
 
 
       <section className="section reviews-section" id="avaliacoes"><div className="reviews-heading"><span className="eyebrow">AVALIAÇÕES</span><h2>Experiências que <em>ficam na memória.</em></h2><p>Um espaço para reunir o que nossas clientes sentem ao viver a experiência de cuidado da Jaqueline.</p></div><div className="reviews-window"><div className="reviews-track">{[...reviews,...reviews].map((review,i)=><article className="review-card" key={i}><div className="review-stars">{[1,2,3,4,5].map(star=><Star key={star} size={15} fill="currentColor"/>)}</div><p>“{review.text}”</p><div className="review-footer"><div className="review-avatar">{review.name.charAt(0)}</div><div><strong>{review.name}</strong><span>{review.treatment}</span></div></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer a clínica e agendar meu atendimento")}><MessageCircle size={18}/> Quero viver essa experiência</button></div></section>
 
-      <section className="section about-section" id="jaqueline"><div className="container about-card"><div className="about-seal">JT</div><div className="about-copy"><span className="eyebrow">QUEM É JAQUELINE TEIXEIRA</span><h2>Mais do que procedimentos, <em>uma forma de cuidar.</em></h2><p>Jaqueline Teixeira atua com estética e massoterapia em Formosa, Goiás, com uma proposta que une cuidado corporal, bem-estar e atenção individual.</p><p>O trabalho parte da escuta: entender o que você procura, respeitar seu momento e escolher, junto com você, os cuidados que realmente fazem sentido. A experiência foi pensada para que cada atendimento seja acolhedor, profissional e sem pressa.</p><div className="about-points"><span><Sparkles size={17}/> Cuidado personalizado</span><span><Heart size={17}/> Acolhimento em cada atendimento</span><span><Check size={17}/> Expectativas reais e orientação</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o trabalho da Jaqueline")}><MessageCircle size={18}/> Conhecer e agendar</button></div></div></section>
+      <section className="section about-section" id="jaqueline"><div className="container about-card"><div className="about-logo"><img src={logoAsset.url} alt="Logomarca Jaqueline Teixeira" /></div><div className="about-copy"><span className="eyebrow">QUEM É JAQUELINE TEIXEIRA</span><h2>Mais do que procedimentos, <em>uma forma de cuidar.</em></h2><p>Jaqueline Teixeira atua com estética e massoterapia em Formosa, Goiás, com uma proposta que une cuidado corporal, bem-estar e atenção individual.</p><p>O trabalho parte da escuta: entender o que você procura, respeitar seu momento e escolher, junto com você, os cuidados que realmente fazem sentido. A experiência foi pensada para que cada atendimento seja acolhedor, profissional e sem pressa.</p><div className="about-points"><span><Sparkles size={17}/> Cuidado personalizado</span><span><Heart size={17}/> Acolhimento em cada atendimento</span><span><Check size={17}/> Expectativas reais e orientação</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer o trabalho da Jaqueline")}><MessageCircle size={18}/> Conhecer e agendar</button></div></div></section>
 
 
       <section className="section highlight-section" id="experiencia"><div className="container narrow center"><span className="eyebrow">DESTAQUE</span><h2>Uma experiência de cuidado que começa <em>antes da maca.</em></h2><p>Do primeiro contato à escolha do protocolo, a proposta é ouvir você e entender o que faz sentido para sua rotina. Sem atendimento automático. Sem pressa.</p><div className="mini-benefits centered-mini"><div><Sparkles size={20}/><span><strong>Personalização</strong><small>Cuidados escolhidos com você.</small></span></div><div><Heart size={20}/><span><strong>Acolhimento</strong><small>Um espaço para desacelerar.</small></span></div><div><ShieldIcon/><span><strong>Responsabilidade</strong><small>Sem promessas irreais.</small></span></div></div><button className="btn btn-primary" onClick={() => goWhatsapp("marcar meu horário")}><MessageCircle size={18}/> Marcar meu horário</button></div></section>
@@ -109,7 +122,7 @@ function Index() {
 
       <section className="final-cta"><div className="final-glow"/><div className="container center"><span className="eyebrow light">SEU MOMENTO COMEÇA COM UMA MENSAGEM</span><h2>Pronta para se colocar na sua própria lista de prioridades?</h2><p>Converse com a Jaqueline e encontre o atendimento que combina com o que você procura.</p><button className="btn btn-primary" onClick={() => goWhatsapp("agendar meu atendimento")}><MessageCircle size={19}/> Quero agendar meu atendimento</button></div></section>
 
-      <footer className="footer"><div className="container footer-grid"><div><a className="brand footer-brand" href="#inicio"><span className="brand-mark">JT</span><span><strong>JAQUELINE TEIXEIRA</strong><small>ESTÉTICA & MASSOTERAPIA</small></span></a><p>Corpo leve, cuidado personalizado e um momento só seu em Formosa-GO.</p></div><div><h4>Atalhos</h4><a href="#procedimentos">Procedimentos</a><a href="#jaqueline">Quem é Jaqueline</a><a href="#como-funciona">Como funciona</a><a href="#faq">Perguntas frequentes</a><a href="#localizacao">Localização</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> WhatsApp</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Instagram size={15}/> Instagram</a><span><MapPin size={15}/> Formosa • Goiás</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Jaqueline Teixeira. Todos os direitos reservados.</span><span>Estética & Massoterapia</span></div></footer>
+      <footer className="footer"><div className="container footer-grid"><div><a className="brand footer-brand brand-logo" href="#inicio"><img src={logoAsset.url} alt="Jaqueline Teixeira Estética e Massoterapia" /></a><p>Corpo leve, cuidado personalizado e um momento só seu em Formosa-GO.</p></div><div><h4>Atalhos</h4><a href="#procedimentos">Procedimentos</a><a href="#jaqueline">Quem é Jaqueline</a><a href="#como-funciona">Como funciona</a><a href="#faq">Perguntas frequentes</a><a href="#localizacao">Localização</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> WhatsApp</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Instagram size={15}/> Instagram</a><span><MapPin size={15}/> Formosa • Goiás</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Jaqueline Teixeira. Todos os direitos reservados.</span><span>Estética & Massoterapia</span></div></footer>
 
       <a className="floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp"><MessageCircle size={25}/></a>
     </main>
