@@ -5,5 +5,5 @@
 - [x] Verificar em computador e celular
 - [x] Conectar a conta do Google Search Console
 - [x] Preparar a confirmação do Google e o mapa de páginas
-- [ ] Publicar a confirmação e verificar o site no Google
-- [ ] Enviar o mapa de páginas ao Google
+- [x] Publicar a confirmação e verificar o site no Google
+- [x] Enviar o mapa de páginas ao Google
