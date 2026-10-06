@@ -9,7 +9,6 @@ import logoAsset from "@/assets/jaqueline-teixeira-logo.png.asset.json";
 import novaLogoAsset from "@/assets/jaqueline-teixeira-logo-nova.png.asset.json";
 import drenagemAsset from "@/assets/drenagem-linfatica.png.asset.json";
 import drenagemModelacaoAsset from "@/assets/drenagem-modelacao.png.asset.json";
-import massagemAsset from "@/assets/massagem-relaxante.png.asset.json";
 import posGestacaoAsset from "@/assets/pos-gestacao.png.asset.json";
 import radioCorporalAsset from "@/assets/radiofrequencia-corporal.png.asset.json";
 import radioFacialAsset from "@/assets/radiofrequencia-facial.png.asset.json";
@@ -54,9 +53,8 @@ const procedures = [
   { title: "Radiofrequência Corporal", text: "Tecnologia aplicada aos cuidados e ao contorno corporal.", icon: Wind, image: radioCorporalAsset.url },
   { title: "Radiofrequência Facial", text: "Tecnologia para um cuidado facial personalizado.", icon: Sparkles, image: radioFacialAsset.url },
   { title: "Massagem Detox", text: "Uma experiência de cuidado para desacelerar e se sentir mais leve.", icon: Heart, image: detoxAsset.url },
-  { title: "Massagem Relaxante", text: "Momento de pausa com técnicas e pedras quentes.", icon: Sparkles, image: massagemAsset.url },
   { title: "Massagem Bronzeadora", text: "Cuidado corporal para realçar o visual e a autoestima.", icon: SunIcon, image: bronzeadoraAsset.url },
-  { title: "Pós-Gestação", text: "Atendimento pensado para o momento e as necessidades de cada mulher.", icon: Heart, image: posGestacaoAsset.url },
+  { title: "Gestantes", text: "Atendimento pensado para o momento e as necessidades de cada gestante.", icon: Heart, image: posGestacaoAsset.url },
   { title: "Pós-Operatório", text: "Cuidados estéticos realizados com atenção e orientação adequada.", icon: Check, image: drenagemAsset.url },
   { title: "Spa dos Pés", text: "Um ritual de cuidado para relaxar e renovar a sensação de bem-estar.", icon: Waves, image: spaPesAsset.url },
   { title: "Banho de Lua", text: "Cuidado corporal para uma pele com aparência mais uniforme e iluminada.", icon: Sparkles, image: banhoLuaAsset.url },
@@ -74,7 +72,7 @@ const reviews = [
 
 const faqs = [
   ["Como funciona a primeira avaliação?", "Conversamos sobre seus objetivos, rotina e o que você deseja melhorar. A partir disso, são indicados os cuidados mais adequados para o seu momento."],
-  ["Quais procedimentos vocês realizam?", "A clínica oferece drenagem linfática, modeladora, tratamentos redutores, radiofrequência facial, corporal e íntima, massagens, pós-gestação, pós-operatório, banho de lua, spa dos pés e outros cuidados."],
+  ["Quais procedimentos vocês realizam?", "A clínica oferece drenagem linfática, modeladora, tratamentos redutores, radiofrequência facial, corporal e íntima, massagens, cuidados para gestantes, pós-operatório, depilação a laser, banho de lua, spa dos pés e outros cuidados."],
   ["A drenagem é indicada para todo mundo?", "A indicação depende das condições individuais. Por isso, o ideal é conversar com a profissional antes de iniciar qualquer protocolo."],
   ["Vocês atendem pós-operatório?", "Sim. Há atendimento voltado ao pós-operatório, sempre respeitando o período de recuperação e as orientações do profissional de saúde responsável."],
   ["Onde fica a clínica?", "Rua Juselino Malheiros, nº 125, Centro, Formosa - GO, CEP 73801-190."],
@@ -95,7 +93,7 @@ function Index() {
         <div className="hero-trust"><span><Check size={15} /> Atendimento personalizado</span><span><Check size={15} /> Formosa • GO</span></div></div>
       </div></section>
 
-      <div className="info-marquee" aria-label="Destaques da clínica"><div className="marquee-track">{[1,2].map((copy) => <div className="marquee-group" key={copy}><span>✦ DRENAGEM LINFÁTICA</span><span>✦ MODELADORA</span><span>✦ RADIOFREQUÊNCIA</span><span>✦ MASSOTERAPIA</span><span>✦ PÓS-GESTAÇÃO</span><span>✦ PÓS-OPERATÓRIO</span><span>✦ LASER DAY</span><span>✦ CUIDADO PERSONALIZADO</span></div>)}</div></div>
+      <div className="info-marquee" aria-label="Destaques da clínica"><div className="marquee-track">{[1,2].map((copy) => <div className="marquee-group" key={copy}><span>✦ DRENAGEM LINFÁTICA</span><span>✦ MODELADORA</span><span>✦ RADIOFREQUÊNCIA</span><span>✦ MASSOTERAPIA</span><span>✦ GESTANTES</span><span>✦ PÓS-OPERATÓRIO</span><span>✦ DEPILAÇÃO A LASER</span><span>✦ CUIDADO PERSONALIZADO</span></div>)}</div></div>
       <section className="section how-section" id="como-funciona"><div className="container"><div className="section-heading center"><span className="eyebrow">COMO FUNCIONA</span><h2>Seu atendimento em <em>4 passos simples.</em></h2><p>Do primeiro contato ao momento de relaxar, tudo começa com uma conversa.</p></div><div className="steps-grid">{[['01','Você chama','Fale pelo WhatsApp e conte o que você procura.'],['02','Conversamos','Entendemos seus objetivos e o que faz sentido para você.'],['03','Escolhemos','O atendimento é organizado de acordo com a sua necessidade.'],['04','Você se cuida','É hora de desacelerar e aproveitar seu momento.']].map(([n,t,d])=><article className="step-card" key={n}><span className="step-number">{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}</div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("dar o primeiro passo e agendar")}><MessageCircle size={18}/> Dar o primeiro passo</button></div></div></section>
 
 
