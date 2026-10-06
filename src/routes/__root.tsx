@@ -81,6 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Jaqueline Teixeira | Estética & Massoterapia" },
       { name: "description", content: "Estética e massoterapia com atendimento personalizado em Formosa-GO." },
       { name: "author", content: "Jaqueline Teixeira" },
+      { name: "google-site-verification", content: "9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew" },
       { property: "og:title", content: "Jaqueline Teixeira | Estética & Massoterapia" },
       { property: "og:description", content: "Estética e massoterapia com atendimento personalizado em Formosa-GO." },
       { property: "og:type", content: "website" },
